@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Date?</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            position: absolute;
+        }
+        .hidden {
+            display: none;
+            font-size: 20px;
+            color: red;
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            border: none;
+        }
+        #yes {
+            background-color: green;
+            color: white;
+        }
+        #no {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="questionBox">
+        <h2>Will you go on a movie date with me?</h2>
+        <button id="yes" onclick="acceptDate()">Yes</button>
+        <button id="no" onmouseover="moveButton()">No</button>
+        <p class="hidden" id="message">Yaaaaay! Love you, you can chat now to him about date❤️</p>
+    </div>
+
+    <script>
+        function acceptDate() {
+            document.getElementById("message").classList.remove("hidden");
+        }
+
+        function moveButton() {
+            let box = document.getElementById("questionBox");
+            let x = Math.random() * (window.innerWidth - box.clientWidth);
+            let y = Math.random() * (window.innerHeight - box.clientHeight);
+            box.style.left = `${x}px`;
+            box.style.top = `${y}px`;
+        }
+    </script>
+</body>
+</html>
